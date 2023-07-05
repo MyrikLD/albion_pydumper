@@ -1,0 +1,43 @@
+{
+  "tag": "cluster",
+  "@{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "cluster.xsd",
+  "@origin": "-335 -305",
+  "@size": "630 600",
+  "@minimapBoundsMin": "-305 -305",
+  "@minimapBoundsMax": "295 295",
+  "@minimapHeightRangeEnabled": "true",
+  "@minimapHeightRange": "-16 16",
+  "@minimapBaseLevelEnabled": "true",
+  "@minimapBaseLevel": "0",
+  "@oceanflow": "0.05",
+  "@oceanflowspeed": "0.01",
+  "@oceananimspeed": "0.4",
+  "templateinstance": [
+    {
+      "@id": "instanceslot_00",
+      "@ref": "1000_CTY_FR_T1_NON",
+      "@pos": "0 0 0",
+      "activelayer": [
+        {
+          "@id": "Layer_01"
+        },
+        {
+          "@id": "Layer_03",
+          "@flags": "halloween"
+        },
+        {
+          "@id": "Layer_04",
+          "@flags": "christmas"
+        },
+        {
+          "@id": "Layer_05",
+          "@flags": "easter"
+        },
+        {
+          "@id": "Layer_06",
+          "@flags": "anniversary"
+        }
+      ]
+    }
+  ]
+}

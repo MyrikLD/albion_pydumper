@@ -1,0 +1,82 @@
+{
+  "tag": "profanityfilters",
+  "@{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "profanity.xsd",
+  "filterbundle": [
+    {
+      "@id": "server",
+      "@filename": "profanity_server.dict",
+      "@loadon": "server"
+    },
+    {
+      "@id": "mandatory",
+      "@filename": "profanity_mandatory.dict",
+      "@loadon": "client",
+      "@alwayson": "true"
+    },
+    {
+      "@id": "EN-US",
+      "@filename": "profanity_en.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "DE-DE",
+      "@filename": "profanity_de.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "FR-FR",
+      "@filename": "profanity_fr.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "RU-RU",
+      "@filename": "profanity_ru.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "PL-PL",
+      "@filename": "profanity_pl.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "ES-ES",
+      "@filename": "profanity_es.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "PT-BR",
+      "@filename": "profanity_pt.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "ZH-CN",
+      "@filename": "profanity_zh.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "KO-KR",
+      "@filename": "profanity_ko.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "JA-JP",
+      "@filename": "profanity_ja.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "IT-IT",
+      "@filename": "profanity_it.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "ID",
+      "@filename": "profanity_id.dict",
+      "@loadon": "client"
+    },
+    {
+      "@id": "ZH-TW",
+      "@filename": "profanity_zh_tw.dict",
+      "@loadon": "client"
+    }
+  ]
+}
