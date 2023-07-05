@@ -31,7 +31,7 @@ def decode(in_file: Path, out_file: Path):
     out_file.write_text(json.dumps(data, indent=2))
 
 
-def parse_gamedata(dir_path: Path, start=None):
+def convert_gamedata(dir_path: Path, start=None):
     start = start or dir_path
 
     for path in dir_path.iterdir():
@@ -48,11 +48,11 @@ def parse_gamedata(dir_path: Path, start=None):
             except Exception:
                 print(f"Exception in {path}")
         else:
-            parse_gamedata(path, start=start)
+            convert_gamedata(path, start=start)
 
 
 def main():
-    parse_gamedata(Path("out") / "xml")
+    convert_gamedata(Path("out") / "xml")
 
 
 if __name__ == "__main__":

@@ -23,12 +23,12 @@ def decode(in_file: Path, out_file: Path):
     out_file.write_bytes(decompressed)
 
 
-def parse_gamedata(dir_path: Path, start=None):
+def decrypt_gamedata(dir_path: Path, start=None):
     start = start or dir_path
 
     for path in dir_path.iterdir():
         if path.is_file():
-            if path.name.startswith('profanity_'):
+            if path.name.startswith("profanity_"):
                 continue
             new_path = (
                 Path.cwd() / "out" / "xml" / path.relative_to(start).with_suffix(".xml")
@@ -36,17 +36,17 @@ def parse_gamedata(dir_path: Path, start=None):
             new_path.parent.mkdir(parents=True, exist_ok=True)
             decode(path, new_path)
         else:
-            parse_gamedata(path, start=start)
+            decrypt_gamedata(path, start=start)
 
 
-def parse_game_folder(game_folder: Path):
-    parse_gamedata(
-        game_folder / "game_x64" / "Albion-Online_Data" / "StreamingAssets" / "GameData"
-    )
+# def parse_game_folder(game_folder: Path):
+#     parse_gamedata(
+#         game_folder / "game_x64" / "Albion-Online_Data" / "StreamingAssets" / "GameData"
+#     )
 
 
 def main():
-    parse_game_folder(Path.home() / "albiononline")
+    decrypt_gamedata(Path("out/bin"))
 
 
 if __name__ == "__main__":
