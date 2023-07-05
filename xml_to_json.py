@@ -22,6 +22,10 @@ def parse_tree(d: Element):
 
 
 def decode(in_file: Path, out_file: Path):
+    assert in_file.is_file()
+    assert in_file.suffix == ".xml"
+    assert out_file.suffix == ".json"
+
     tree = ElementTree.fromstring(in_file.read_text())
     data = parse_tree(tree)
     out_file.write_text(json.dumps(data, indent=2))
