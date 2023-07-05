@@ -11,8 +11,9 @@ python decryptor.py
 
 # Convert xml to json
 python xml_to_json.py
+```
 
-# Or just run
+### Or just run to get json folder
+```
 python main.py
-# to get json
 ```
