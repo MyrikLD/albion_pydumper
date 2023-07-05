@@ -6,6 +6,15 @@ from downloader import download_update, Platform, get_current_version
 from xml_to_json import convert_gamedata
 
 
+def rm_tree(path: Path):
+    for child in path.iterdir():
+        if child.is_file():
+            child.unlink()
+        else:
+            rm_tree(child)
+    path.rmdir()
+
+
 async def main():
     platform = Platform.linux
     path = Path("out")
@@ -31,6 +40,10 @@ async def main():
 
     print("Convert")
     convert_gamedata(path / "xml")
+
+    print("Cleanup")
+    rm_tree(path / "bin")
+    rm_tree(path / "xml")
 
 
 if __name__ == "__main__":
