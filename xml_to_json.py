@@ -5,18 +5,19 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import Element
 
 
-def parse_tree(d: Element):
-    item = {"tag": d.tag}
+def parse_tree(element: Element):
+    item = {"tag": element.tag}
 
-    for k, v in d.attrib.items():
+    for k, v in element.attrib.items():
         item[f"@{k}"] = v
 
-    sub = [parse_tree(i) for i in d]
-    d = defaultdict(list)
-    for i in sub:
-        d[i.pop("tag")].append(i)
+    obj = defaultdict(list)
 
-    item.update(d)
+    for sub in element:
+        i = parse_tree(sub)
+        obj[i.pop("tag")].append(i)
+
+    item.update(obj)
 
     return item
 
