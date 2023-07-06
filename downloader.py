@@ -109,4 +109,6 @@ async def download_update(platform: Platform, version: str):
 
 
 if __name__ == "__main__":
-    asyncio.run(download_update(Platform.linux))
+    platform = Platform.linux
+    version = get_current_version(platform)
+    asyncio.run(download_update(platform, version))
